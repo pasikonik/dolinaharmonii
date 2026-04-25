@@ -22,3 +22,53 @@ projectFilesBackup
 .DS_Store
 
 dist/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ghost runtime
+.ghost-cli
+.ghostpid
+current
+
+# Logs
+*.log
+content/logs/
+
+# SQLite DB (lokalna baza)
+content/data/*.db
+content/data/*.sqlite3
+
+# Uploaded images/files
+content/images/
+content/files/
+content/media/
+
+# Cache / temp
+content/adapters/storage/
+content/tmp/
+tmp/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+.env.*
+
+# SSL / certs
+*.pem
+*.key
+*.crt
+
+# Build
+dist/
