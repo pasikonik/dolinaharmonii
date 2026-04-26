@@ -13,6 +13,9 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "components/global.css";
 @import "components/forms.css";
 @import "components/buttons.css";
+@import "components/dolina.css";
+@import "components/dolina-post.css";
+@import "components/dolina-domy.css";
 
 /* Ghost components */
 @import "ghost/header.css";

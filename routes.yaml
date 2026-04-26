@@ -1,0 +1,19 @@
+routes:
+  /:
+    template: home
+    data: page.home
+
+collections:
+  /warsztaty/:
+    permalink: /warsztaty/{slug}/
+    template: post
+    filter: tag:hash-warsztat
+
+  /blog/:
+    permalink: /blog/{slug}/
+    template: index
+    filter: tag:-hash-warsztat
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

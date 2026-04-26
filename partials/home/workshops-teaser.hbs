@@ -1,0 +1,96 @@
+{{!--
+    SEKCJA: Workshops teaser — "Cztery ścieżki, jedna dolina"
+    Ciągnie 4 najnowsze posty z tagiem #warsztat z Ghosta.
+    Każdy warsztat to normalny post w Ghost Admin z:
+      - Tytułem (np. "Mindfulness w naturze")
+      - Feature image (zdjęcie karty)
+      - Excerpt (krótki opis, maks ~120 znaków)
+      - Primary tag: #warsztat
+      - Tag wtórny jako kategoria: mindfulness / medytacja / rękodzieło / self-care
+      - Custom excerpt pola "Czas trwania · Termin" w formacie "3 dni · Maj 2026"
+        wpisany w pole Excerpt w Ghost Admin
+
+    Sekcja używa {{#get}} — Ghost API helper do pobierania postów.
+--}}
+
+<section id="warsztaty">
+    <div class="container">
+
+        {{!-- Nagłówek sekcji --}}
+        <div class="workshops-head reveal">
+            <div>
+                <span class="eyebrow">Warsztaty &amp; wydarzenia</span>
+                <h2 style="margin-top: 16px;">Cztery ścieżki, jedna dolina.</h2>
+            </div>
+            <p class="lede">
+                Spotykamy się przy konkretnych praktykach — mindfulness, medytacji, rękodziele i samoopiece. Każdy warsztat to mały, kameralny krąg.
+            </p>
+        </div>
+
+        {{!-- Grid kart: żywe dane z Ghosta --}}
+        {{#get "posts" filter="tag:hash-warsztat" limit="4" include="tags"}}
+
+            {{#if posts}}
+                <div class="workshop-grid">
+                    {{#foreach posts}}
+                        <article class="workshop-card reveal" style="transition-delay: {{@index}}00ms">
+
+                            {{!-- Zdjęcie --}}
+                            {{#if feature_image}}
+                                <img class="img" src="{{feature_image}}" alt="{{title}}">
+                            {{else}}
+                                <div class="img placeholder-img" style="aspect-ratio: 4/5;">brak zdjęcia</div>
+                            {{/if}}
+
+                            <div class="body">
+                                <div class="head-row">
+                                    {{!-- primary_tag pomija automatycznie tagi wewnętrzne (#warsztat) --}}
+                                    {{#primary_tag}}
+                                        <span class="chip">{{name}}</span>
+                                    {{/primary_tag}}
+                                </div>
+
+                                <h4>{{title}}</h4>
+
+                                {{!-- Opis z pola Excerpt --}}
+                                {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                {{/if}}
+
+                                {{!-- Czas i termin z meta_description (Settings → Post → Meta description)
+                                     lub wstaw statycznie w każdym poście jako pierwsze zdanie treści.
+                                     Tutaj używamy reading_time jako fallback. --}}
+                                <div class="meta">
+                                    {{!-- Termin: pobieramy z published_at lub zostawiamy puste --}}
+                                    <span>{{date published_at format="MMM YYYY"}}</span>
+                                </div>
+
+                                <a href="{{url}}" class="btn btn-ghost" style="margin-top: auto; font-size: 13px;">
+                                    Więcej
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+
+                            </div>
+                        </article>
+                    {{/foreach}}
+                </div>
+            {{else}}
+                {{!-- Fallback gdy nie ma jeszcze żadnych warsztatów --}}
+                <div style="text-align: center; padding: 80px 0; color: var(--text-muted);">
+                    <p style="font-family: var(--mono); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 16px;">Warsztaty wkrótce</p>
+                    <p>Dodaj pierwsze warsztaty w Ghost Admin jako post z tagiem <code>#warsztat</code></p>
+                </div>
+            {{/if}}
+
+        {{/get}}
+
+        {{!-- CTA do pełnego kalendarza --}}
+        <div style="text-align: center; margin-top: 56px;">
+            <a class="btn btn-secondary" href="/warsztaty/">
+                Pełen kalendarz warsztatów
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,117 @@
+{{!< default}}
+
+{{!--
+    warsztaty.hbs — lista warsztatów
+    URL: /warsztaty/
+    Renderuje collection przefiltrowaną przez routes.yaml (tag:hash-warsztat).
+    Ghost przekazuje tu zmienną {{posts}} automatycznie — bez potrzeby {{#get}}.
+--}}
+
+<main class="warsztaty-page">
+
+    {{!-- Nagłówek strony --}}
+    <header class="page-hero cream">
+        <div class="container">
+            <div class="page-hero-inner reveal">
+                <span class="eyebrow">Warsztaty &amp; wydarzenia</span>
+                <h1>Cztery ścieżki,<br>jedna dolina.</h1>
+                <p class="page-hero-lead">
+                    Spotykamy się przy konkretnych praktykach — mindfulness, medytacji, rękodziele i samoopiece. Każdy warsztat to mały, kameralny krąg. Przyjeżdżasz na kilka dni, wychodzisz z czymś swoim.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Grid warsztatów --}}
+    <section>
+        <div class="container">
+
+            {{#if posts}}
+                <div class="workshop-grid">
+                    {{#foreach posts}}
+                        <article class="workshop-card reveal" style="transition-delay: {{@index}}00ms">
+
+                            {{!-- Zdjęcie --}}
+                            <a href="{{url}}" class="workshop-card-img-link">
+                                {{#if feature_image}}
+                                    <img class="img" src="{{feature_image}}" alt="{{title}}">
+                                {{else}}
+                                    <div class="img placeholder-img" style="aspect-ratio: 4/5;">brak zdjęcia</div>
+                                {{/if}}
+                            </a>
+
+                            <div class="body">
+                                <div class="head-row">
+                                    {{!-- primary_tag pomija automatycznie tagi wewnętrzne (#warsztat) --}}
+                                    {{#primary_tag}}
+                                        <span class="chip">{{name}}</span>
+                                    {{/primary_tag}}
+                                </div>
+
+                                <h4><a href="{{url}}" style="color: inherit; text-decoration: none;">{{title}}</a></h4>
+
+                                {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                {{/if}}
+
+                                <div class="meta">
+                                    <span>{{date published_at format="MMM YYYY"}}</span>
+                                    {{#if reading_time}}
+                                        <span>· {{reading_time}} min czytania</span>
+                                    {{/if}}
+                                </div>
+
+                                <a href="{{url}}" class="btn btn-ghost" style="margin-top: auto; font-size: 13px;">
+                                    Szczegóły &amp; terminy
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+
+                        </article>
+                    {{/foreach}}
+                </div>
+
+                {{!-- Paginacja (gdy warsztatów będzie więcej niż posts_per_page) --}}
+                {{#if pagination}}
+                    {{#if pagination.prev}}
+                        <div style="text-align: center; margin-top: 64px;">
+                            <a class="btn btn-secondary" href="{{pagination.prev}}">← Nowsze warsztaty</a>
+                        </div>
+                    {{/if}}
+                    {{#if pagination.next}}
+                        <div style="text-align: center; margin-top: 64px;">
+                            <a class="btn btn-secondary" href="{{pagination.next}}">Starsze warsztaty →</a>
+                        </div>
+                    {{/if}}
+                {{/if}}
+
+            {{else}}
+                {{!-- Pusty stan --}}
+                <div class="warsztaty-empty">
+                    <p style="font-family: var(--mono); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent-earth); margin-bottom: 16px;">Warsztaty wkrótce</p>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">Pracujemy nad kalendarzem na nowy sezon. Zapisz się na newsletter żeby być pierwszą osobą która się dowie.</p>
+                    <a class="btn btn-primary" href="{{@site.url}}/#newsletter">Zapisz się na newsletter</a>
+                </div>
+            {{/if}}
+
+        </div>
+    </section>
+
+    {{!-- CTA do rezerwacji grupowej --}}
+    <section class="cream tight">
+        <div class="container">
+            <div class="warsztaty-cta reveal">
+                <div>
+                    <span class="eyebrow">Grupy i organizacje</span>
+                    <h2 style="margin-top: 12px; font-size: clamp(28px, 3vw, 40px);">Planujesz wyjazd dla grupy?</h2>
+                    <p style="color: var(--text-muted); max-width: 480px; margin-top: 16px;">Organizujemy warsztaty na zamówienie — dla firm, szkół, grup nieformalnych. Możemy dostosować program, czas trwania i intensywność do Twoich potrzeb.</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                    <a class="btn btn-primary" href="mailto:dolina@harmonii.pl">Napisz do nas</a>
+                    <a class="btn btn-secondary" href="{{@site.url}}/#noclegi">Zobacz noclegi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

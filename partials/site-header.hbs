@@ -1,0 +1,46 @@
+{{!--
+    Nawigacja typu "floating pill" z designu Doliny Harmonii.
+
+    Linki: najpierw próbuje Ghost navigation (Settings → Navigation),
+    jeśli puste — fallback na hardkodowane linki z designu.
+
+    Aby używać dynamicznej nawigacji z Ghost Admin, wystarczy ustawić
+    Settings → Navigation z odpowiednimi pozycjami.
+--}}
+
+<nav class="nav-pill" aria-label="Główna nawigacja">
+
+    {{!-- Logo / brand --}}
+    <a href="{{@site.url}}" class="brand">
+        {{!-- Ikona seed (SVG inline) --}}
+        <svg width="22" height="22" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M32 12c-7 6-7 16 0 22 7-6 7-16 0-22z"/>
+            <path d="M32 34c0 8 0 16 0 20"/>
+            <path d="M32 42c-6-4-10-2-12 2"/>
+            <path d="M32 48c6-4 10-2 12 2"/>
+        </svg>
+        {{@site.title}}
+    </a>
+
+    {{!-- Linki nawigacji --}}
+    <ul class="nav-pill-list" role="list">
+        {{#if @site.navigation}}
+            {{!-- Dynamiczna nawigacja z Ghost Admin --}}
+            {{#foreach @site.navigation}}
+                <li><a href="{{url}}"{{#if current}} aria-current="page"{{/if}}>{{label}}</a></li>
+            {{/foreach}}
+        {{else}}
+            {{!-- Fallback: hardkodowane linki z projektu --}}
+            <li><a href="{{@site.url}}/#dolina">Dolina</a></li>
+            <li><a href="{{@site.url}}/#warsztaty">Warsztaty</a></li>
+            <li><a href="{{@site.url}}/#noclegi">Noclegi</a></li>
+            <li><a href="{{@site.url}}/#izery">Izery</a></li>
+            <li><a href="{{@site.url}}/#galeria">Galeria</a></li>
+            <li><a href="{{@site.url}}/#zespol">Zespół</a></li>
+        {{/if}}
+    </ul>
+
+    {{!-- CTA --}}
+    <a class="nav-cta" href="mailto:dolina@harmonii.pl">Zarezerwuj</a>
+
+</nav>

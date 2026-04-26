@@ -1,0 +1,198 @@
+{{!< default}}
+
+{{!--
+    page-dom-jogi.hbs — strona Domu Jogi
+    URL: /dom-jogi/
+    Wymaga: Ghost Admin → Pages → New page → slug: dom-jogi → Publish
+
+    Feature image strony → główne zdjęcie hero
+    Treść strony (content) → ignorowana, layout hardkodowany
+--}}
+
+{{#page}}
+<main>
+
+    {{!-- Hero --}}
+    <header class="dom-hero">
+        {{#if feature_image}}
+            <div class="dom-hero-img">
+                <img src="{{feature_image}}" alt="Dom Jogi — Dolina Harmonii">
+            </div>
+        {{else}}
+            <div class="dom-hero-img dom-hero-placeholder"></div>
+        {{/if}}
+        <div class="dom-hero-overlay">
+            <div class="container">
+                <span class="eyebrow" style="color: var(--cta-main);">01 — Obiekt główny</span>
+                <h1 style="color: #FAF8F2; margin-top: 12px;">Dom Jogi</h1>
+                <p style="color: rgba(250,248,242,.8); font-family: var(--serif); font-size: 20px; margin-top: 16px; max-width: 520px;">
+                    Drewniana stodoła z salą praktyki 90 m² i miejscem dla 12 osób. Przestrzeń dla grup warsztatowych.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Główna sekcja: opis + ficzery --}}
+    <section class="cream">
+        <div class="container">
+            <div class="dom-layout">
+
+                {{!-- Lewa: opis --}}
+                <div class="dom-text reveal">
+                    <span class="eyebrow">O obiekcie</span>
+                    <h2 style="margin-top: 16px; margin-bottom: 28px; font-size: clamp(32px, 3.5vw, 48px);">
+                        Stodoła, która stała się przestrzenią praktyki.
+                    </h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 17px; line-height: 1.8;">
+                        Dom Jogi to zrewitalizowana drewniana stodoła z XVIII wieku, zaadaptowana z myślą o grupach warsztatowych. Główna sala o powierzchni 90 m² ma wysokość 7 metrów, dębową podłogę i trzy duże okna wychodzące na łąkę i las.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 17px; line-height: 1.8;">
+                        Poza salą: sześć dwuosobowych pokoi na piętrze, wspólna kuchnia z piecem chlebowym, sauna fińska na zewnątrz i taras z widokiem na Góry Izerskie.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 17px; line-height: 1.8;">
+                        Idealne miejsce na kilkudniowe odosobnienia, szkolenia, zjazdy integracyjne i warsztaty twórcze. Przyjmujemy grupy od 6 do 12 osób.
+                    </p>
+
+                    {{!-- Ficzery --}}
+                    <div class="dom-features reveal">
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="28" width="40" height="26" rx="2"/><path d="M22 28V20a10 10 0 0 1 20 0v8"/></svg>
+                            Sala praktyki 90 m²
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 48V32c0-8 4-16 12-16s12 8 12 16v16"/><path d="M14 48h36"/></svg>
+                            Kominek opałowy
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 36h40M12 36v8h40v-8"/><path d="M20 36V20h24v16"/></svg>
+                            Kuchnia wspólna
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 44c0-10 7-20 16-20s16 10 16 20"/><path d="M10 44h44"/></svg>
+                            Sauna fińska
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 44h40M16 44V28h32v16"/><path d="M24 28v-4a8 8 0 0 1 16 0v4"/></svg>
+                            6 pokoi · 12 miejsc
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 32a10 10 0 1 1 20 0"/><path d="M12 42h40v4H12z"/><path d="M32 32v6"/></svg>
+                            WiFi na życzenie
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Prawa: cennik + CTA --}}
+                <aside class="dom-sidebar reveal">
+                    <div class="sidebar-card">
+                        <span class="eyebrow" style="display:block; margin-bottom: 16px;">Rezerwacja</span>
+
+                        <div class="dom-price-block">
+                            <div class="dom-price-row">
+                                <div class="acc-price-label-sm">Pobyt indywidualny</div>
+                                <div>
+                                    <span class="dom-price-num">420 zł</span>
+                                    <span class="dom-price-unit">pokój / doba</span>
+                                </div>
+                            </div>
+                            <div class="dom-price-row">
+                                <div class="acc-price-label-sm">Wynajem całości</div>
+                                <div>
+                                    <span class="dom-price-num">4 800 zł</span>
+                                    <span class="dom-price-unit">weekend dla grupy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-primary" href="mailto:dolina@harmonii.pl?subject=Rezerwacja: Dom Jogi" style="width:100%; justify-content:center; margin-bottom: 12px;">
+                            Zapytaj o termin
+                        </a>
+                        <a class="btn btn-secondary" href="tel:+48757121456" style="width:100%; justify-content:center;">
+                            +48 757 121 456
+                        </a>
+
+                        <p style="font-size:12px; color:var(--text-muted); margin-top:16px; text-align:center;">
+                            Odpowiadamy w ciągu 48 godzin
+                        </p>
+                    </div>
+
+                    {{!-- Miniaturki zdjęć --}}
+                    <div class="dom-thumbs">
+                        <img src="{{@site.url}}/content/images/dom-jogi-sala.jpg" alt="Sala praktyki">
+                        <img src="{{@site.url}}/content/images/dom-jogi-pokoj.jpg" alt="Pokój">
+                        <img src="{{@site.url}}/content/images/dom-jogi-kuchnia.jpg" alt="Kuchnia">
+                        <img src="{{@site.url}}/content/images/dom-jogi-sauna.jpg" alt="Sauna">
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    {{!-- Sekcja zdjęcia pełna szerokość --}}
+    <section style="padding: 0;">
+        <div class="dom-fullwidth-img">
+            <img src="{{@site.url}}/content/images/dom-jogi-taras.jpg" alt="Taras Domu Jogi z widokiem na góry">
+            <div class="dom-fullwidth-caption">
+                <span>Taras z widokiem na Góry Izerskie · 720 m n.p.m.</span>
+            </div>
+        </div>
+    </section>
+
+    {{!-- Co zawiera pobyt --}}
+    <section>
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Co zawiera pobyt</span>
+                <h2>Wszystko czego potrzebujesz, nic zbędnego.</h2>
+            </div>
+            <div class="dom-includes-grid reveal">
+                <div class="dom-include-item">
+                    <div class="dom-include-icon">
+                        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 50c0-18 14-34 36-36-2 22-18 36-36 36z"/><path d="M14 50C24 40 36 28 50 14"/></svg>
+                    </div>
+                    <h4>Wyżywienie na zamówienie</h4>
+                    <p>Możemy zorganizować wegetariańskie posiłki z lokalnych produktów. Kuchnia jest do pełnej dyspozycji grupy.</p>
+                </div>
+                <div class="dom-include-item">
+                    <div class="dom-include-icon">
+                        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="20" r="10"/><path d="M14 50c0-10 8-18 18-18s18 8 18 18"/></svg>
+                    </div>
+                    <h4>Prowadzący na miejscu</h4>
+                    <p>Możemy polecić sprawdzonych prowadzących warsztaty lub ugościć Twojego prowadzącego.</p>
+                </div>
+                <div class="dom-include-item">
+                    <div class="dom-include-icon">
+                        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 12c-7 6-7 16 0 22 7-6 7-16 0-22z"/><path d="M32 34c0 8 0 16 0 20"/></svg>
+                    </div>
+                    <h4>Spacery i wycieczki</h4>
+                    <p>Organizujemy lokalne wycieczki — torfowiska, kryształowe strumienie, nocne obserwacje nieba.</p>
+                </div>
+                <div class="dom-include-item">
+                    <div class="dom-include-icon">
+                        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="36" height="36" rx="4"/><path d="M14 28h36M28 14v36"/></svg>
+                    </div>
+                    <h4>Elastyczny program</h4>
+                    <p>Dostosowujemy harmonogram do Twojej grupy — od intensywnego szkolenia po luźny pobyt regeneracyjny.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{!-- CTA końcowe --}}
+    <section class="region" style="padding: 100px 0;">
+        <div class="container" style="text-align: center;">
+            <span class="eyebrow">Zarezerwuj</span>
+            <h2 style="color: #FAF8F2; margin: 16px auto 24px; max-width: 600px;">Gotowy na kilka dni w dolinie?</h2>
+            <p style="color: rgba(249,247,242,.75); max-width: 480px; margin: 0 auto 40px;">
+                Napisz do nas z datami i liczebnością grupy — dobierzemy najlepszy wariant i odpowiemy w 48 godzin.
+            </p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                <a class="btn btn-primary" href="mailto:dolina@harmonii.pl?subject=Rezerwacja: Dom Jogi">Napisz do nas</a>
+                <a class="btn btn-glass" href="/dom-na-lace/">Zobacz Dom na Łące</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+{{/page}}

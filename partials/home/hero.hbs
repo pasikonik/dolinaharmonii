@@ -1,0 +1,45 @@
+{{!--
+    SEKCJA: Hero
+    Fullscreen z zdjęciem tła, eyebrow, claim i dwa przyciski CTA.
+    Zdjęcie tła: wgraj do Ghost Admin i podmień URL poniżej,
+    lub ustaw jako Feature Image strony "home" i użyj {{page.feature_image}}.
+--}}
+
+<header class="hero" id="top">
+
+    {{!-- Tło: feature image strony "home" jeśli ustawione, fallback na placeholder --}}
+    {{#if page.feature_image}}
+        <img class="hero-bg" src="{{page.feature_image}}" alt="">
+    {{else}}
+         <img class="hero-bg" src="{{@site.url}}/content/images/hero-bg.jpg" alt="Dolina Harmonii — widok na dom i ogród">
+    {{/if}}
+
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            Kopaniec · Góry Izerskie
+        </div>
+
+        <p class="hero-claim">
+            {{!-- Claim: edytowalny przez pole "Excerpt" strony Home w Ghost Admin --}}
+            {{#if page.custom_excerpt}}
+                {{page.custom_excerpt}}
+            {{else}}
+                miejsce naturalnych mocy
+            {{/if}}
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{{@site.url}}/#noclegi">Zaplanuj pobyt
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-glass" href="/warsztaty/">Zobacz warsztaty</a>
+        </div>
+    </div>
+
+    <div class="hero-meta">
+        <span>50°51′N · 15°27′E</span>
+        <span>EST. 2017 · 720 m n.p.m.</span>
+        <span>↓ przewiń</span>
+    </div>
+
+</header>

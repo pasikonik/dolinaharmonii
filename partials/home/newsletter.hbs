@@ -1,0 +1,48 @@
+{{!--
+    SEKCJA: Newsletter — "List z doliny"
+    Statyczny formularz na razie (action="#").
+    Gdy zdecydujesz się podpiąć Mailchimp / Brevo / Ghost Members:
+    - Ghost Members: zmień <form> na data-members-form="subscribe"
+      i dodaj <input type="email" data-members-email>
+    - Mailchimp: podmień action="" na URL z Mailchimp embed form
+--}}
+
+<section id="newsletter" class="tight">
+    <div class="container">
+        <div class="newsletter-wrap reveal">
+
+            {{!-- Lewa: opis --}}
+            <div>
+                <span class="eyebrow">List z doliny</span>
+                <h2 style="margin-top: 16px; margin-bottom: 16px;">
+                    Kalendarz warsztatów &amp; wolne terminy — raz w miesiącu.
+                </h2>
+                <p style="color: var(--text-muted); max-width: 420px;">
+                    Wysyłamy spokojną wiadomość: nowe warsztaty, otwarte terminy noclegów, fragmenty z izerskiego życia. Bez nachalności.
+                </p>
+            </div>
+
+            {{!-- Prawa: formularz --}}
+            <div class="newsletter-form">
+                <div class="row">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="twój e-mail"
+                        aria-label="Adres e-mail"
+                        required
+                    >
+                    <button class="btn btn-primary" type="submit">Zapisz się</button>
+                </div>
+                <span class="note">Wypisać się można jednym kliknięciem. Nie udostępniamy adresów.</span>
+
+                <div class="note-box">
+                    Pobyt grupowy? Napisz
+                    <a href="mailto:dolina@harmonii.pl">dolina@harmonii.pl</a>
+                    — odpowiadamy w 48 godzin.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

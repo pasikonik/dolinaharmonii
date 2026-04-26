@@ -1,0 +1,66 @@
+{{!--
+    SEKCJA: Intro — "Czym jest Dolina"
+    Dwie kolumny: tekst + zdjęcie z badgem.
+    Tekst: edytowalny tutaj w kodzie (rzadko się zmienia).
+    Zdjęcie: wgraj do Ghost Admin jako dowolny post/page
+    i podmień src poniżej, lub trzymaj tu jako stały URL.
+--}}
+
+<section id="dolina" class="cream">
+    <div class="container">
+        <div class="intro-grid">
+
+            {{!-- Lewa kolumna: tekst --}}
+            <div class="intro-text reveal">
+
+                <span class="eyebrow">Czym jest Dolina</span>
+
+                <p class="lead" style="margin-top: 16px;">
+                    Stary, drewniany dom u podnóża Izerów — przestrzeń, gdzie warsztaty, cisza i wspólny stół tworzą rytm dnia bliski naturze.
+                </p>
+
+                <p style="color: var(--text-muted); margin-bottom: 16px;">
+                    Działamy od 2017 roku w Kopańcu — niewielkiej wsi otoczonej lasami, łąkami i strumieniami. Zapraszamy grupy warsztatowe oraz osoby, które chcą po prostu zatrzymać się na kilka dni, oddychać i obserwować pory roku.
+                </p>
+
+                <p style="color: var(--text-muted);">
+                    Łączymy ekologię, rozwój osobisty i turystykę regionalną. Współtworzymy Magiczne Izery — opowieść o tym miejscu, jego ludziach i tradycjach.
+                </p>
+
+                {{!-- Statystyki --}}
+                <div class="intro-stats">
+                    <div class="intro-stat">
+                        <div class="num">8</div>
+                        <div class="label">lat tworzenia miejsca</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="num">40+</div>
+                        <div class="label">warsztatów rocznie</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="num">2</div>
+                        <div class="label">budynki, 12 pokoi</div>
+                    </div>
+                </div>
+
+            </div>
+
+            {{!-- Prawa kolumna: zdjęcie z floating badge --}}
+            <div class="intro-image reveal">
+
+                {{!-- PODMIEŃ src na właściwy URL po wgraniu zdjęcia do Ghost --}}
+                <img
+                    src="{{@site.url}}/content/images/dolina-dom.jpg"
+                    alt="Wnętrze drewnianego domu w Dolinie Harmonii"
+                >
+
+                <div class="badge">
+                    <span class="label">Dwa filary</span>
+                    <p>Wynajem przestrzeni dla grup warsztatowych oraz indywidualne pobyty regeneracyjne.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

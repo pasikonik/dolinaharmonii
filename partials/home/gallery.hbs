@@ -1,0 +1,40 @@
+{{!--
+    SEKCJA: Gallery — "Cztery pory roku w Dolinie"
+    Masonry-style grid: 4 kolumny, niektóre elementy span-2.
+    Układ (zgodny z projektem):
+      [1: span-2-row] [2] [3]
+                      [4: span-2-col]
+      [5] [6]         [7: span-2-col]
+      [8]
+
+    Zdjęcia: podmień URL-e po wgraniu do Ghost Admin.
+    Kolejność i span-y możesz modyfikować bezpośrednio tu.
+
+    ALTERNATYWA dla przyszłości: podpiąć pod Ghost Gallery
+    używając {{#get "pages" filter="tag:hash-galeria"}} — ale
+    na starcie łatwiej trzymać tu statyczne URL-e.
+--}}
+
+<section id="galeria">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <span class="eyebrow">Galeria</span>
+            <h2>Cztery pory roku w Dolinie.</h2>
+            <p class="lede">Jazdy konne wczesną wiosną, koncerty w stodole, sierpniowe zbiory, ciche zimowe poranki — fragmenty życia miejsca.</p>
+        </div>
+
+        <div class="gallery-grid reveal">
+            {{!-- Podmień każde /content/images/galeria-XX.jpg na właściwy URL --}}
+            <img src="{{@site.url}}/content/images/galeria-01.jpg" alt="Dolina Harmonii wiosną"    class="span-2-row">
+            <img src="{{@site.url}}/content/images/galeria-02.jpg" alt="Góry Izerskie w mgle">
+            <img src="{{@site.url}}/content/images/galeria-03.jpg" alt="Strumień w lesie">
+            <img src="{{@site.url}}/content/images/galeria-04.jpg" alt="Sierpniowe łąki"           class="span-2-col">
+            <img src="{{@site.url}}/content/images/galeria-05.jpg" alt="Zimowe poranki">
+            <img src="{{@site.url}}/content/images/galeria-06.jpg" alt="Kwiaty izerskie">
+            <img src="{{@site.url}}/content/images/galeria-07.jpg" alt="Drzewo na łące"            class="span-2-col">
+            <img src="{{@site.url}}/content/images/galeria-08.jpg" alt="Stary dom">
+        </div>
+
+    </div>
+</section>

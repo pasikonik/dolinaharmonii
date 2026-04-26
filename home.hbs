@@ -1,0 +1,30 @@
+{{!--
+    home.hbs — strona główna Doliny Harmonii
+    Wymaga: routes.yaml z wpisem: /: { template: home, data: page.home }
+    Oraz: Ghost Admin → Pages → strona o slug "home" (opublikowana)
+
+    Sekcje:
+    1. Hero            — zdjęcie pełnoekranowe, claim, CTA
+    2. Intro           — "Czym jest Dolina", tekst + zdjęcie
+    3. Workshops       — 4 karty warsztatów (żywe dane z Ghost)
+    4. Accommodations  — Dom Jogi + Dom na Łące editorial
+    5. Region          — Magiczne Izery, ciemne tło
+    6. Gallery         — grid zdjęć 4 pory roku
+    7. Team            — zespół + partnerzy
+    8. Newsletter      — formularz zapisu
+--}}
+
+{{!< default}}
+
+{{#page}}
+
+    {{> "home/hero"}}
+    {{> "home/intro"}}
+    {{> "home/workshops-teaser"}}
+    {{> "home/accommodations"}}
+    {{> "home/region"}}
+    {{> "home/gallery"}}
+    {{> "home/team"}}
+    {{> "home/newsletter"}}
+
+{{/page}}

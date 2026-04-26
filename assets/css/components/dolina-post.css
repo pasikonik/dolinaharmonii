@@ -1,0 +1,191 @@
+/* ==========================================================
+   Dopisz na końcu assets/css/components/dolina.css
+   ========================================================== */
+
+/* Nagłówek podstron (warsztaty, domy) -------------------- */
+.page-hero {
+    padding: 140px 0 80px;
+}
+.page-hero-inner {
+    max-width: 720px;
+}
+.page-hero-inner h1 {
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+.page-hero-lead {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* Pusty stan lista warsztatów */
+.warsztaty-empty {
+    text-align: center;
+    padding: 80px 0;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* CTA warsztaty grupowe */
+.warsztaty-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+/* Post / warsztat hero ----------------------------------- */
+.post-hero { padding: 0; }
+.post-hero-img {
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+.post-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.post-hero-content {
+    padding: 64px 0 0;
+    max-width: 800px;
+}
+.post-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.post-title {
+    font-size: clamp(36px, 4vw, 60px);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+.post-excerpt {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 680px;
+}
+.post-meta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--text-muted);
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 64px;
+}
+
+/* Post layout: treść + sidebar */
+.post-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 80px;
+    align-items: start;
+    padding: 0 0 120px;
+}
+
+/* Treść postu (Ghost content styles) */
+.post-content {
+    min-width: 0; /* fix grid overflow */
+}
+.post-content h2 { font-size: clamp(24px, 2.5vw, 36px); margin: 48px 0 20px; }
+.post-content h3 { font-size: clamp(20px, 2vw, 28px); margin: 36px 0 16px; }
+.post-content p  { color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; font-size: 17px; }
+.post-content ul,
+.post-content ol { color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; padding-left: 24px; font-size: 17px; }
+.post-content li { margin-bottom: 8px; }
+.post-content img { border-radius: var(--r-md); margin: 32px 0; }
+.post-content blockquote {
+    border-left: 3px solid var(--cta-main);
+    margin: 32px 0;
+    padding: 4px 0 4px 24px;
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--brand-primary);
+    font-style: italic;
+}
+.post-content hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 48px 0;
+}
+
+/* Sidebar */
+.post-sidebar {
+    position: sticky;
+    top: 100px; /* poniżej nav-pill */
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.sidebar-card {
+    background: var(--bg-section);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 32px;
+}
+.sidebar-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 24px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.sidebar-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-main);
+}
+.sidebar-meta-row svg { color: var(--accent-earth); flex-shrink: 0; }
+.sidebar-more { display: flex; flex-direction: column; gap: 4px; }
+.sidebar-post {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: opacity .2s;
+}
+.sidebar-post:last-child { border-bottom: none; }
+.sidebar-post:hover { opacity: .75; }
+.sidebar-post img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: var(--r-sm);
+    flex-shrink: 0;
+}
+
+/* Responsive post */
+@media (max-width: 1000px) {
+    .post-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .post-sidebar {
+        position: static;
+    }
+    .post-sidebar { order: -1; } /* sidebar nad treścią na mobile */
+}
+@media (max-width: 760px) {
+    .post-hero-img { height: 40vh; min-height: 280px; }
+    .post-title { font-size: clamp(28px, 6vw, 40px); }
+    .page-hero { padding: 100px 0 60px; }
+    .warsztaty-cta { flex-direction: column; align-items: flex-start; }
+}

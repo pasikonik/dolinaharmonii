@@ -1,0 +1,193 @@
+{{!< default}}
+
+{{!--
+    page-dom-na-lace.hbs — strona Domu na Łące
+    URL: /dom-na-lace/
+    Wymaga: Ghost Admin → Pages → New page → slug: dom-na-lace → Publish
+
+    Feature image strony → główne zdjęcie hero
+--}}
+
+{{#page}}
+<main>
+
+    {{!-- Hero --}}
+    <header class="dom-hero">
+        {{#if feature_image}}
+            <div class="dom-hero-img">
+                <img src="{{feature_image}}" alt="Dom na Łące — Dolina Harmonii">
+            </div>
+        {{else}}
+            <div class="dom-hero-img dom-hero-placeholder"></div>
+        {{/if}}
+        <div class="dom-hero-overlay">
+            <div class="container">
+                <span class="eyebrow" style="color: var(--cta-main);">02 — Obiekt kameralny</span>
+                <h1 style="color: #FAF8F2; margin-top: 12px;">Dom na Łące</h1>
+                <p style="color: rgba(250,248,242,.8); font-family: var(--serif); font-size: 20px; margin-top: 16px; max-width: 520px;">
+                    Drewniany dom na skraju łąki dla par, rodzin i osób szukających ciszy poza grupowym rytmem.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Główna sekcja --}}
+    <section class="cream">
+        <div class="container">
+            <div class="dom-layout">
+
+                {{!-- Lewa: opis --}}
+                <div class="dom-text reveal">
+                    <span class="eyebrow">O obiekcie</span>
+                    <h2 style="margin-top: 16px; margin-bottom: 28px; font-size: clamp(32px, 3.5vw, 48px);">
+                        Mały dom z dużą przestrzenią do oddychania.
+                    </h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 17px; line-height: 1.8;">
+                        Dom na Łące to czteropokojowy drewniany dom stojący osobno, na skraju łąki opadającej ku lasowi. Ma własne wejście, bibliotekę z kominkiem, taras skierowany ku Izerom i ogród zielarski tuż za drzwiami.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 17px; line-height: 1.8;">
+                        Dla osób, które chcą się zatrzymać — bez grupy, bez programu. Możesz tu po prostu być: czytać, chodzić, gotować na piecu kaflowym, patrzeć jak wschodzi słońce nad Garbami.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 17px; line-height: 1.8;">
+                        Przyjmujemy pary, rodziny z dziećmi, małe grupy do 8 osób przy wynajmie całości. Dom nie ma sali warsztatowej — to celowe. Tu się odpoczywa.
+                    </p>
+
+                    {{!-- Ficzery --}}
+                    <div class="dom-features reveal">
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 48V32c0-8 4-16 12-16s12 8 12 16v16"/><path d="M14 48h36"/></svg>
+                            Piec kaflowy
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 36c0-6 5-12 12-12s12 6 12 12v8H20v-8z"/><path d="M14 44h36"/></svg>
+                            Herbaciarnia
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="36" rx="16" ry="8"/><path d="M16 36v6c0 4 7 8 16 8s16-4 16-8v-6"/></svg>
+                            Wanna wolnostojąca
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 50c0-18 14-34 36-36-2 22-18 36-36 36z"/><path d="M14 50C24 40 36 28 50 14"/></svg>
+                            Ogród zielarski
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="32,14 35,26 48,26 38,34 41,46 32,38 23,46 26,34 16,26 29,26"/></svg>
+                            Taras gwiazd
+                        </div>
+                        <div class="acc-feature">
+                            <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 44h40M16 44V28h32v16"/><path d="M24 28v-4a8 8 0 0 1 16 0v4"/></svg>
+                            4 pokoje
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Prawa: cennik + CTA --}}
+                <aside class="dom-sidebar reveal">
+                    <div class="sidebar-card">
+                        <span class="eyebrow" style="display:block; margin-bottom: 16px;">Rezerwacja</span>
+
+                        <div class="dom-price-block">
+                            <div class="dom-price-row">
+                                <div class="acc-price-label-sm">Pobyt indywidualny</div>
+                                <div>
+                                    <span class="dom-price-num">320 zł</span>
+                                    <span class="dom-price-unit">pokój / doba</span>
+                                </div>
+                            </div>
+                            <div class="dom-price-row">
+                                <div class="acc-price-label-sm">Wynajem całości</div>
+                                <div>
+                                    <span class="dom-price-num">1 800 zł</span>
+                                    <span class="dom-price-unit">/ doba</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-primary" href="mailto:dolina@harmonii.pl?subject=Rezerwacja: Dom na Łące" style="width:100%; justify-content:center; margin-bottom: 12px;">
+                            Zapytaj o termin
+                        </a>
+                        <a class="btn btn-secondary" href="tel:+48757121456" style="width:100%; justify-content:center;">
+                            +48 757 121 456
+                        </a>
+
+                        <p style="font-size:12px; color:var(--text-muted); margin-top:16px; text-align:center;">
+                            Odpowiadamy w ciągu 48 godzin
+                        </p>
+                    </div>
+
+                    <div class="dom-thumbs">
+                        <img src="{{@site.url}}/content/images/dom-na-lace-pokoj.jpg" alt="Pokój">
+                        <img src="{{@site.url}}/content/images/dom-na-lace-kuchnia.jpg" alt="Kuchnia">
+                        <img src="{{@site.url}}/content/images/dom-na-lace-taras.jpg" alt="Taras">
+                        <img src="{{@site.url}}/content/images/dom-na-lace-ogrod.jpg" alt="Ogród">
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    {{!-- Zdjęcie pełna szerokość --}}
+    <section style="padding: 0;">
+        <div class="dom-fullwidth-img">
+            <img src="{{@site.url}}/content/images/dom-na-lace-widok.jpg" alt="Dom na Łące — widok na łąkę i las">
+            <div class="dom-fullwidth-caption">
+                <span>Łąka opadająca ku Izerskim Garbom · wiosna</span>
+            </div>
+        </div>
+    </section>
+
+    {{!-- Okolica --}}
+    <section>
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">W pobliżu</span>
+                <h2>Góry, las, strumień — dosłownie za płotem.</h2>
+                <p class="lede">Kopaniec jest punktem startowym kilkunastu szlaków pieszych. Kryształy kwarcu w strumieniach, torfowiska i ciemne niebo — to wszystko w promieniu 3 km.</p>
+            </div>
+            <div class="dom-nearby-grid reveal">
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">3 min</span>
+                    <p>Las Izerski — wejście na szlak</p>
+                </div>
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">8 min</span>
+                    <p>Strumień z kryształami kwarcu</p>
+                </div>
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">20 min</span>
+                    <p>Hala Izerska i torfowisko</p>
+                </div>
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">25 min</span>
+                    <p>Stacja ciemnego nieba</p>
+                </div>
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">30 min</span>
+                    <p>Szklarska Poręba · centrum</p>
+                </div>
+                <div class="dom-nearby-item">
+                    <span class="dom-nearby-dist">45 min</span>
+                    <p>Liberec (Czechy)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{!-- CTA --}}
+    <section class="region" style="padding: 100px 0;">
+        <div class="container" style="text-align: center;">
+            <span class="eyebrow">Zarezerwuj</span>
+            <h2 style="color: #FAF8F2; margin: 16px auto 24px; max-width: 600px;">Kilka dni dla siebie w sercu Izerów.</h2>
+            <p style="color: rgba(249,247,242,.75); max-width: 480px; margin: 0 auto 40px;">
+                Podaj daty i liczbę osób — dobierzemy najlepszy wariant i odpowiemy w 48 godzin.
+            </p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                <a class="btn btn-primary" href="mailto:dolina@harmonii.pl?subject=Rezerwacja: Dom na Łące">Napisz do nas</a>
+                <a class="btn btn-glass" href="/dom-jogi/">Zobacz Dom Jogi</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+{{/page}}

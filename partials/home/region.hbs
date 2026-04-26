@@ -1,0 +1,51 @@
+{{!--
+    SEKCJA: Region — "Magiczne Izery"
+    Ciemne tło (--brand-primary), dwie kolumny: tekst + zdjęcie.
+    Zdjęcie: podmień URL po wgraniu do Ghost Admin.
+--}}
+
+<section id="izery" class="region">
+    <div class="container">
+        <div class="region-grid">
+
+            {{!-- Lewa: tekst --}}
+            <div class="reveal">
+                <span class="eyebrow">Magiczne Izery</span>
+                <h2 style="margin-top: 16px; margin-bottom: 28px;">Najstarsze góry w Polsce, najmniej zatłoczone.</h2>
+
+                <p>Kopaniec leży w cieniu Izerskich Garbów — pasma uważanego za jedno z najmniej znanych w Polsce. Mchy, torfowiska, kryształy kwarcu w strumieniach, ciemne niebo gwiazd.</p>
+
+                <p>Współtworzymy oddolny ruch Magiczne Izery — opowieść o ludziach, miejscach i tradycjach regionu. Polecamy wycieczki, mapy, miejscowych przewodników.</p>
+
+                <div class="region-stats">
+                    <div class="region-stat">
+                        <div class="num">600+</div>
+                        <div class="label">milionów lat geologii</div>
+                    </div>
+                    <div class="region-stat">
+                        <div class="num">III</div>
+                        <div class="label">stopień ochrony nieba</div>
+                    </div>
+                    <div class="region-stat">
+                        <div class="num">14</div>
+                        <div class="label">tras pieszych w okolicy</div>
+                    </div>
+                </div>
+
+                <a class="btn btn-primary" href="https://magiczneizery.pl" target="_blank" rel="noopener">
+                    Poznaj region
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            {{!-- Prawa: zdjęcie --}}
+            <div class="reveal region-img">
+                <img
+                    src="{{@site.url}}/content/images/izery-gory.jpg"
+                    alt="Góry Izerskie — widok na pasmo"
+                >
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,208 @@
+/* ==========================================================
+   Dopisz na końcu assets/css/components/dolina.css
+   (lub dodaj @import "components/dolina-domy.css" w index.css)
+   ========================================================== */
+
+/* Dom hero ----------------------------------------------- */
+.dom-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 480px;
+    overflow: hidden;
+}
+.dom-hero-img {
+    width: 100%;
+    height: 100%;
+}
+.dom-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dom-hero-placeholder {
+    background: var(--bg-sage);
+}
+.dom-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(18,32,25,.85) 0%,
+        rgba(18,32,25,.3) 50%,
+        rgba(18,32,25,.1) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 72px;
+}
+
+/* Dom layout: tekst + sidebar ---------------------------- */
+.dom-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 80px;
+    align-items: start;
+}
+.dom-text { min-width: 0; }
+.dom-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    max-width: 520px;
+}
+.dom-sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cennik w sidebarze */
+.dom-price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0 24px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.dom-price-row {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.dom-price-row:last-child { border-bottom: none; }
+.acc-price-label-sm {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--text-muted);
+}
+.dom-price-num {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--brand-primary);
+    margin-right: 8px;
+}
+.dom-price-unit {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Miniaturki w sidebarze */
+.dom-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.dom-thumbs img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: var(--r-sm);
+    width: 100%;
+}
+
+/* Pełna szerokość zdjęcie */
+.dom-fullwidth-img {
+    position: relative;
+    height: 50vh;
+    min-height: 360px;
+    overflow: hidden;
+}
+.dom-fullwidth-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dom-fullwidth-caption {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    background: rgba(18,32,25,.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(249,247,242,.85);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+}
+
+/* Co zawiera pobyt */
+.dom-includes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+.dom-include-item { display: flex; flex-direction: column; gap: 12px; }
+.dom-include-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--bg-sage);
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-earth);
+}
+.dom-include-item h4 { font-size: 17px; }
+.dom-include-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+/* W pobliżu grid */
+.dom-nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+}
+.dom-nearby-item {
+    padding: 28px 32px;
+    background: var(--bg-card);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.dom-nearby-item:nth-child(3n) { border-right: none; }
+.dom-nearby-item:nth-last-child(-n+3) { border-bottom: none; }
+.dom-nearby-dist {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--brand-primary);
+    line-height: 1;
+}
+.dom-nearby-item p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+/* Responsive domy */
+@media (max-width: 1100px) {
+    .dom-includes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+    .dom-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .dom-sidebar { position: static; }
+    .dom-sidebar { order: -1; }
+}
+@media (max-width: 760px) {
+    .dom-hero { height: 50vh; min-height: 360px; }
+    .dom-features { grid-template-columns: 1fr; }
+    .dom-includes-grid { grid-template-columns: 1fr; }
+    .dom-nearby-grid { grid-template-columns: 1fr 1fr; }
+    .dom-nearby-item:nth-child(3n) { border-right: 1px solid var(--line); }
+    .dom-nearby-item:nth-child(2n) { border-right: none; }
+    .dom-thumbs { grid-template-columns: repeat(4, 1fr); }
+}
